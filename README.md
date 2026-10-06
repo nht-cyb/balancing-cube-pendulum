@@ -8,7 +8,7 @@ A cube-shaped inverted pendulum that balances on one of its **edges** or on its 
   <img src="docs/build.gif" alt="Build process: motor mount, frame and electronics" width="360">
 </p>
 
-<p align="center"><b>▶ Full demo videos:</b> <a href="https://drive.google.com/drive/u/1/folders/1OIPeiEGu_qAjH-schkNBbWfEO3ckcJUU">Google Drive folder</a></p>
+<p align="center"><b>▶ Full demo videos:</b> <a href="https://drive.google.com/drive/u/1/folders/1OIPeiEGu_qAjH-schkNBbWfEO3ckcJUU">Google Drive folder</a> &nbsp;·&nbsp; <b>🧊 3D model:</b> <a href="https://drive.google.com/drive/folders/1N-OwwTjmH3r523ASoxteu_BQdPYT6DqE?usp=sharing">Google Drive folder</a></p>
 
 > The GIFs above are built from the photos in [`model/`](model). The balancing videos themselves are in the Drive folder.
 
@@ -23,7 +23,7 @@ A cube-shaped inverted pendulum that balances on one of its **edges** or on its 
 | [`esp32_encoders/`](esp32_encoders) | Reference ESP32 firmware for motors **with** encoder feedback, plus `schematic.png`. |
 | [`arduino_nano_controller/`](arduino_nano_controller) | Reference firmware for an Arduino Nano build (tuning over USB serial instead of Bluetooth), plus `arduino_schematic.pdf`. |
 | [`motors_test/`](motors_test) | Stand-alone sketch that spins each motor and reads its encoder, for checking wiring before balancing. |
-| [`model/`](model) | Photos of the mechanical build and the finished cube balancing (Nov 2022). |
+| [`model/`](model) | Photos of the mechanical build and the finished cube balancing (Nov 2022). The 3D model files are on [Google Drive](https://drive.google.com/drive/folders/1N-OwwTjmH3r523ASoxteu_BQdPYT6DqE?usp=sharing). |
 | [`Reports/`](Reports) | Course report (`.docx`) and presentation slides (`.pptx` / `.pdf`). |
 | [`VTCB.xlsx`](VTCB.xlsx) | Measured IMU angles at each balancing point (*VTCB = vị trí cân bằng*, "balancing position"). See [Balancing point data](#balancing-point-data). |
 | `docs/` | GIFs used in this README. |
@@ -48,7 +48,7 @@ The reference firmware in `ESP32_controller/`, `esp32_encoders/`, `arduino_nano_
 - MPU6050 IMU (I²C, address `0x68`)
 - 3 × BLDC motors with built-in driver (e.g. Nidec 24H), each with a reaction flywheel
 - Buzzer, battery with voltage divider on `VBAT`
-- 3D-printed cube frame (see `model/`)
+- 3D-printed cube frame: [3D model files](https://drive.google.com/drive/folders/1N-OwwTjmH3r523ASoxteu_BQdPYT6DqE?usp=sharing); build photos are in `model/`
 
 ### ESP32 pinout
 
