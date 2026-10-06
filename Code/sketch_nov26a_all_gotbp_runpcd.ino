@@ -124,7 +124,7 @@ void save(){
   EEPROM.commit();
   EEPROM.get(0, offsets);
   if(offsets.ID1 == 99 && offsets.ID2 == 99 && offsets.ID3 == 99 && offsets.ID4 == 99){
-    calibrating = true;
+    calibrated = true;
   }
   calibrating = false;
   Serial.println("calibrating off");
@@ -407,10 +407,12 @@ void setup(){
   ledcAttachPin(PWM3, PWM3_CH);
   Motor3_control(0);
 
-  EEPROM.get(0, offsets);
-  if(offsets.ID1 =- 99 && offsets.ID2 == 99 && offsets.ID3 == 99 && offsets.ID4 == 99)
-    calibrated = true;
-  else calibrated = false;
+  //chi dung VTCB trong EEPROM neu da luu day du, neu khong giu gia tri mac dinh o tren
+  OffsetObj saved;
+  EEPROM.get(0, saved);
+  if(saved.ID1 == 99 && saved.ID2 == 99 && saved.ID3 == 99 && saved.ID4 == 99)
+    offsets = saved;
+  calibrated = (offsets.ID1 == 99 && offsets.ID2 == 99 && offsets.ID3 == 99 && offsets.ID4 == 99);
 
     delay(2000);
     digitalWrite(BUZZER, HIGH);
@@ -475,16 +477,16 @@ void loop() {
     motor_speed_Y += pwm_Y;
 
     if(balancing_point == 1){
-    //  XY_to_threeWay(-pwm_X, -pwm_Y);
+      XY_to_threeWay(-pwm_X, -pwm_Y);
     }    
     else if(balancing_point == 2){
-    //  Motor1_control(pwm_Y);
+      Motor1_control(pwm_Y);
     }
     else if(balancing_point == 3){
-    //  Motor2_control(-pwm_Y);
+      Motor2_control(-pwm_Y);
     }
     else if(balancing_point == 4){
-    //  Motor3_control(pwm_X);
+      Motor3_control(pwm_X);
     }
   }
   else{

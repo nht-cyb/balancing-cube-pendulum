@@ -30,9 +30,9 @@ BluetoothSerial SerialBT;
 //khai bao cam bien MPU
 #define MPU6050       0x68        //dia chi thiet bi
 #define ACCEL_CONFIG  0x1C        //dia chi kenh kenh do gia toc o cam bien
-#define GYRO_CONFIG   0x18        //dia chi kenh do van toc goc cua cam bien
+#define GYRO_CONFIG   0x1B        //dia chi kenh do van toc goc cua cam bien
 
-#define PWR_MGMT_1    0x68
+#define PWR_MGMT_1    0x6B
 #define PWR_MGMT_2    0x6C
 
 //tham so can chinh cam bien
